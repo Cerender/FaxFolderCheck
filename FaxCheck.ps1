@@ -33,6 +33,8 @@ set-variable emailTSList -option Constant -value "<p>Some troubleshooting steps:
 <li>Check fax settings for DHCP, DNS and path to folder (\\ESERVER\ED_Fax)</li>
 <li>Try to scan a copy to that folder</li>
 <li>Check if share is accessible (\\ESERVER\ED_Fax)</li>
+<li><b>Check this link for additional Fax info:</b>
+<a href=`"http://FAX_IP/web/guest/en/websys/webArch/mainFrame.cgi`">Fax Status</a></li>
 </ul></p>
 "
 
@@ -105,7 +107,7 @@ IF ($fileAge -gt $howOld) {
 
     } ELSE {
         $mailSubject = "ED Fax Folder Warning"
-        $mailBody = "<p>This is the first e-mail about the ED fax machine not saving a fax.</p>"
+        $mailBody = "<p>This is the first e-mail about the ED fax machine not receiving a fax.</p>"
         $file.name > $monitorLog
         $alertCount++
         $alertCount >> $monitorLog
